@@ -1,0 +1,14 @@
+@import './assets/scss/variables';
+.global {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $black;
+  font-family: "Saira Condensed", "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,17 @@
+.ColorRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.ColorIsSelected {
+    display: flex;
+    background-color: #70707015;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    &.--selected {
+        background-color: #2E3948;
+        filter: drop-shadow(-5px 10px 12px rgba(46, 57, 72, 0.2));
+    }
+}

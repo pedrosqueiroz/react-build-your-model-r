@@ -1,0 +1,81 @@
+@import "_variables";
+@import "_stage";
+.EngineOption {
+  margin: 30px 0;
+  width: 100%;
+}
+.EngineOption__Label {
+  display: flex;
+  width: 100%;
+}
+.engineSelector {
+  display: flex;
+  background-color: #f7f9fa;
+  width: 100%;
+  padding: 10px 0;
+  height: 75px;
+  justify-content: space-around;
+  min-width: 395px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  span {
+    display: flex;
+  }
+  .--spanFlex {
+    display: flex;
+    padding: 0 10px;
+    margin: auto 5px;
+    p {
+      margin-block-end: 0;
+      margin-block-start: 0;
+    }
+  }
+  .engineSelector__engine {
+    display: flex;
+    font-size: 2.125em;
+    letter-spacing: 2.83px;
+    .--redEngineSpan {
+      margin-left: 8px;
+      color: $rvRed;
+      font-weight: 600;
+    }
+  }
+  .engineSelector__kwh,
+  .engineSelector__miles {
+    font-size: 1.375em;
+    .--labelSpan {
+      margin-left: 8px;
+      letter-spacing: 2.8px;
+      color: #5b5b5b;
+    }
+  }
+  .engineSelector__check {
+    margin: auto 0;
+    display: block;
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: background-color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    &.--selected {
+      background-color: $rvRed;
+    }
+  }
+  &.--selected {
+    opacity: 1;
+  }
+}
+.engineSelector--priceLabel {
+  opacity: 0;
+  width: 100%;
+  text-align: right;
+  font-size: 1.375em;
+  color: $rvRed;
+  &.--selected {
+    opacity: 1;
+  }
+}
+.--mb-0 {
+  margin-bottom: 0;
+}

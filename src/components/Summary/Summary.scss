@@ -1,0 +1,32 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/stage";
+.Summary {
+    width: 100%;
+}
+.summaryTitle {
+  font-size: 2.8125em;
+  font-weight: 400;
+  letter-spacing: 3.75px;
+}
+.lightHr {
+  border-color: #97979741;
+  border-width: 1px;
+}
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  p {
+    font-size: 1.375em;
+    font-weight: 500;
+    margin: 0 2px;
+  }
+  &.--lg {
+    p {
+      font-size: 2em;
+    }
+  }
+  .itemPrice {
+    color: $rvRed;
+  }
+}

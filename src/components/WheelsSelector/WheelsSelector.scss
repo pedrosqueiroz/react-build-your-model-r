@@ -1,0 +1,31 @@
+@import "../../assets/scss/variables";
+.--WheelSelection {
+  align-content: center;
+  justify-content: space-evenly;
+  .wheel {
+    margin: auto 0;
+    transform: scale(0.89);
+    opacity: 0.6;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    &.--selected {
+      transform: scale(1);
+      opacity: 1;
+    }
+    img {
+      padding: 10px;
+      max-width: 200px;
+    }
+    .wheel--title {
+      font-size: 1.375em;
+      text-align: center;
+      opacity: 0;
+      transition: transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+      &.--red {
+        color: $rvRed;
+      }
+      &.--selected {
+        opacity: 1;
+      }
+    }
+  }
+}
