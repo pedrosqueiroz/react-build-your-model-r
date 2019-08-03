@@ -22,7 +22,7 @@ I really liked the freedom it gives you and ease to access other component's ass
     * Responsivity is not even a thing.
     My deadline is over and i couldn't implement it. Yet. I'll keep updating this until it's good enough.
     * Code is a mess.
-    I developed a SCSS architecture called SpaghettiCSS. Do not dare trying it at home. **Needs** refactor.
+    I developed a SCSS architecture called SpaghettiCSS. Do not dare trying it at home. Urges refactoring.
     * Header/Navbar doesn't have an indicator for inactive links.
     * Lacks transitions between stages.
 
