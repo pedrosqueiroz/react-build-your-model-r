@@ -13,13 +13,16 @@ I really liked the freedom it gives you and ease to access other component's ass
 
 ### Issues faced
 
-    * Context API: It's simple AS SOON AS YOU GET IT. For me it took three long days, thus causing my deadline to get screwed.
+    * Context API: It's simple AS SOON AS YOU GET IT.
+    For me it took three long days, thus causing my deadline to get screwed.
     * To keep a straight design pattern facing a framework for the first time.
 
 ### Things to improve
 
-    * Responsivity is not even a thing. My deadline is over and i couldn't implement it. Yet. I'll keep updating this until it's good enough.
-    * Code is a mess. I developed a SCSS architecture called SpaghettiCSS. Do not dare trying it at home. **Needs** refactor.
+    * Responsivity is not even a thing.
+    My deadline is over and i couldn't implement it. Yet. I'll keep updating this until it's good enough.
+    * Code is a mess.
+    I developed a SCSS architecture called SpaghettiCSS. Do not dare trying it at home. **Needs** refactor.
     * Header/Navbar doesn't have an indicator for inactive links.
     * Lacks transitions between stages.
 
