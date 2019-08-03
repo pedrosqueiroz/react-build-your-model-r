@@ -38,7 +38,7 @@ export async function ContextLoader() {
                                         }
                                     }
                                 }));
-                            })                        
+                            })
                     }, 1000)
                 )
             } else {

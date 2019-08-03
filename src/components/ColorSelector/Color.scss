@@ -10,9 +10,19 @@
   padding: 10px;
   border-radius: 50%;
   transition: background-color 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  &.--selected, &.--isClickable:hover  {    
+  &.--selected,
+  &.--isClickable:hover {
     background-color: #2e3948;
     filter: drop-shadow(-5px 10px 12px rgba(46, 57, 72, 0.2));
   }
-  
+}
+@media (max-width: 990px) {
+  .ColorRow {
+    justify-content: space-around;
+  }
+  .ColorIsSelected {
+    img {
+      max-width: 40px;
+    }
+  }
 }

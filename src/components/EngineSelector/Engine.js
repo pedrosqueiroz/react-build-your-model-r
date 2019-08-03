@@ -57,7 +57,7 @@ const Engine = (props) => {
             </div>
             <div className="EngineOption__Label">
                 <span className={CONTEXT.modelr.engine_id === id ? 'engineSelector--priceLabel --selected' : 'engineSelector--priceLabel'}>
-                    {!price === 0 ? '+$' : null}{!price === 0 ? toUSD(price) : null}
+                    {price === 0 ? null : '+$'}{price === 0 ? null : toUSD(price)}
                 </span>
             </div>
         </div>

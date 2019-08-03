@@ -2,8 +2,11 @@
 .--WheelSelection {
   align-content: center;
   justify-content: space-evenly;
+  flex-direction: row !important;
+  overflow-x: hidden;
   .wheel {
     margin: auto 0;
+
     &.--selected {
       img {
         transform: scale(1);
@@ -30,6 +33,23 @@
       }
       &.--selected {
         opacity: 1;
+      }
+    }
+  }
+}
+@media (max-width: 990px) {
+  .--WheelSelection {
+    .wheel {
+      width: 100%;     
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .wheel--title {
+        font-size: 1.1em;
+      }
+      img {
+        max-width: 130px;
       }
     }
   }

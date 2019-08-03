@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600&display=swap');
-@import './variables';
+@import url("https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600&display=swap");
+@import "./variables";
 .default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: $black;
+  cursor: default;
   font-family: "Saira Condensed", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   a {
     text-decoration: none;
-    color: inherit;    
+    color: inherit;
   }
   .--isClickable {
     cursor: pointer;

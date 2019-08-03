@@ -88,9 +88,9 @@ export const StatusBar = () => {
       </span>
       <div className="statusBar__nextSlice">
         <span className="statusBar__item --next" onClick={nextStage} >
-          <div className="underline"> Next<img src={rightArrow} alt="Next stage button." /></div>
+          <div className="underline">Next<img src={rightArrow} alt="Next stage button." /></div>
         </span>
-      </div>
+      </div>     
     </div>
   );
 }

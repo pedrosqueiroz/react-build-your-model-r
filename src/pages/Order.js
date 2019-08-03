@@ -30,7 +30,7 @@ export const Order = () => {
             {CONTEXT.isLoading === true ? <Loader/> : null}
             <Header/>
             {CurrentStage()}
-            <StatusBar />
+            {CONTEXT.current_stage < 4 ? <StatusBar /> : null}
         </React.Fragment>
     );
 }

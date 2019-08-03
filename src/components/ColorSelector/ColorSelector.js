@@ -28,14 +28,18 @@ export default function ColorSelector() {
   return (
     <div className="Stage">
       <div className="Stage__half">
-        <div className="Stage__half --stagePreview">
+        <div className="Stage__half --stagePreview --carColor">
+        <div className="--stageSet--title title__sm">
+                <h1>Color</h1>
+                <p>{CONTEXT.api_fetch_result.color.description}</p>
+              </div>
           <img
             src={selectedColor()}
-            className="--imagePreview" alt=""
+            className="--imagePreview --carColor" alt=""
           />
           <div className="--paintSpecs">
             <h1>{CONTEXT.modelr.color_label === null ? 'Metalic Vermilion' : CONTEXT.modelr.color_label}</h1>
-            <h1 className="--red">{CONTEXT.modelr.color_price > 0 ? `$${toUSD(CONTEXT.modelr.color_price)}` : 'Included'} </h1>
+            <h1 className="--red">{CONTEXT.modelr.color_price > 0 ? `+$${toUSD(CONTEXT.modelr.color_price)}` : 'Included'} </h1>
           </div>
         </div>
       </div>
@@ -43,7 +47,7 @@ export default function ColorSelector() {
         <div className="Stage__half --stageSet">
           <div className="stage-area-grid">
             <div className="stage-area-title">
-              <div className="--stageSet--title">
+              <div className="--stageSet--title title__lg">
                 <h1>Color</h1>
                 <p>{CONTEXT.api_fetch_result.color.description}</p>
               </div>

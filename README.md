@@ -10,3 +10,11 @@ You're able to choose it's engine, color and wheels set. (We all love Teslas, do
 
 React is awesome.
 I really liked the freedom it gives you and ease to access other component's assets (like functions & props) as well as interact with them.
+
+### What i learned
+
+### Good things about my code
+
+### Bad things about my code
+
+# How to run the app

@@ -1,12 +1,19 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/stage";
 .Summary {
-    width: 100%;
+  width: 100%;
 }
 .summaryTitle {
   font-size: 2.8125em;
   font-weight: 400;
   letter-spacing: 3.75px;
+  .summaryTitle_model {
+    font-weight: 500;
+  }
+  .summaryTitle_r {
+    font-weight: 600;
+    color: $rvRed;
+  }
 }
 .lightHr {
   border-color: #97979741;
@@ -28,5 +35,39 @@
   }
   .itemPrice {
     color: $rvRed;
+  }
+}
+.statusBar_rebuild {
+  width: 100%;
+  div {
+    font-size: 1.375em;
+    font-weight: 500;
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 9.4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    img {
+      max-width: 22px;
+      margin-top: -3px;
+      margin-left: 10px;
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &:hover {
+      img {
+        transform: rotate(390deg);
+      }
+    }
+  }
+}
+@media (max-width: 990px) {
+  .listItem {
+    padding: 15px 0;
+    font-size: 1.025em;
+  }
+  .summaryTitle {
+    font-size: 1.375em;
   }
 }

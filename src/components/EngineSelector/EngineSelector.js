@@ -18,17 +18,18 @@ export const EngineSelector = (props) => {
     return (
         <div className="Stage">
             <div className="Stage__half">
-                <div className="Stage__half --stagePreview">
+                <div className="Stage__half --stagePreview --engine">
+                <h1 className="title__sm --engine">Engine</h1>
                     <img
                         src={CONTEXT.modelr.engine_id >= 2 ? engine2 : engine1}
-                        className="--imagePreview" alt=""
+                        className="--imagePreview --engine" alt=""
                     />
                 </div>
             </div>
             <div className="Stage__half">
                 <div className="Stage__half --stageSet">
                     <div className="--stageSet--title">
-                        <h1>Engine</h1>
+                        <h1 className="title__lg">Engine</h1>
                     </div>
                     {
                         !isLoading ? (engineList.map((ENGINE) => {

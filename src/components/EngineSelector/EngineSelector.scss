@@ -81,3 +81,19 @@
 .--mb-0 {
   margin-bottom: 0;
 }
+@media (max-width: 990px) {
+  .EngineOption {
+    margin: 20px 0;
+    max-height: 75px;
+  }
+  .engineSelector {
+    padding: 0;
+    .engineSelector__engine {
+      font-size: 1em;
+    }
+    .engineSelector__kwh,
+    .engineSelector__miles {
+      font-size: 1em;
+    }
+  }
+}
