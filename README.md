@@ -15,6 +15,7 @@ I really liked the freedom it gives you and ease to access other component's ass
 
     * Context API: It's simple AS SOON AS YOU GET IT.
     For me it took three long days, thus causing my deadline to get screwed.
+    
     * To keep a straight design pattern facing a framework for the first time.
 
 ### Things to improve
