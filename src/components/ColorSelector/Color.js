@@ -23,11 +23,12 @@ const Color = (props) => {
         } else return console.log('Error loading selected color.');
 
     }
+    
     const setColorChoice = colorChoice => {
         var id = parseInt(colorChoice.currentTarget.dataset.color_id);
         setCONTEXT(currentCONTEXT => ({
-            ...currentCONTEXT, modelr: {  
-                price: currentCONTEXT.modelr.price,             
+            ...currentCONTEXT, modelr: {
+                price: currentCONTEXT.modelr.price,
                 color_id: id,
                 color_label: label,
                 color_price: price,
@@ -41,18 +42,17 @@ const Color = (props) => {
                 engine_price: currentCONTEXT.modelr.engine_price
             }
         }));
-        console.log(CONTEXT);
     }
 
     return (
-        <div className="ColorOption"
+        <div className="ColorOption "
             onClick={setColorChoice}
             data-color_id={id}
             data-color_price={price}
             data-color_label={label}
             data-color_hex={hex}
         >
-            <div className={CONTEXT.modelr.color_id === id ? 'ColorIsSelected --selected' : 'ColorIsSelected'}>
+            <div className={CONTEXT.modelr.color_id === id ? 'ColorIsSelected --selected --isClickable' : 'ColorIsSelected --isClickable'}>
                 <img src={selectedColorDot()} alt="" />
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { Context } from '../../services/Context';
-
+import toUSD from '../../services/Utils';
 import './EngineSelector.scss';
 
 const Engine = (props) => {
@@ -26,12 +26,11 @@ const Engine = (props) => {
                 wheels_price: currentCONTEXT.modelr.wheels_price,
             }
         }));
-        console.log(CONTEXT);
     }
     return (
         <div className={price > 0 ? 'EngineOption --mb-0' : 'EngineOption'}>
             <div
-                className={CONTEXT.modelr.engine_id === id ? 'engineSelector --selected' : 'engineSelector'}
+                className={CONTEXT.modelr.engine_id === id ? 'engineSelector --selected --isClickable' : 'engineSelector --isClickable'}
                 onClick={setEngine}
                 data-engine_id={id}
                 data-engine_type={type}
@@ -53,12 +52,12 @@ const Engine = (props) => {
                     <p className="--labelSpan">miles range</p>
                 </span>
                 <span
-                    className={CONTEXT.modelr.engine_id == id ? 'engineSelector__check --selected' : 'engineSelector__check'}
+                    className={CONTEXT.modelr.engine_id === id ? 'engineSelector__check --selected' : 'engineSelector__check'}
                 ></span>
             </div>
             <div className="EngineOption__Label">
-                <span className={CONTEXT.modelr.engine_id == id ? 'engineSelector--priceLabel --selected' : 'engineSelector--priceLabel'}>
-                    {!price == 0 ? '+$' : null}{!price == 0 ? (price).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") : null}
+                <span className={CONTEXT.modelr.engine_id === id ? 'engineSelector--priceLabel --selected' : 'engineSelector--priceLabel'}>
+                    {!price === 0 ? '+$' : null}{!price === 0 ? toUSD(price) : null}
                 </span>
             </div>
         </div>

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import { Color, COLORS } from './Color';
+import { Color } from './Color';
 import { Context } from '../../services/Context';
-
+import toUSD from '../../services/Utils';
 
 import red from '../../assets/img/png/red.png';
 import blue from '../../assets/img/png/blue.png';
@@ -10,7 +10,7 @@ import gray from '../../assets/img/png/gray.png';
 
 export default function ColorSelector() {
 
-  const [CONTEXT, setCONTEXT] = useContext(Context);
+  const [CONTEXT] = useContext(Context);
 
   const selectedColor = () => {
     if (CONTEXT.modelr.color_id === 4) {
@@ -35,7 +35,7 @@ export default function ColorSelector() {
           />
           <div className="--paintSpecs">
             <h1>{CONTEXT.modelr.color_label === null ? 'Metalic Vermilion' : CONTEXT.modelr.color_label}</h1>
-            <h1 className="--red">{CONTEXT.modelr.color_price > 0 ? `$${CONTEXT.modelr.color_price}` : 'Included'} </h1>
+            <h1 className="--red">{CONTEXT.modelr.color_price > 0 ? `$${toUSD(CONTEXT.modelr.color_price)}` : 'Included'} </h1>
           </div>
         </div>
       </div>

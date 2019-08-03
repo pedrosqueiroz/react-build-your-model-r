@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 
-import { ContextLoader } from '../services/ContextLoader';
 import Loader from '../components/Loader/Loader';
 import { Context } from '../services/Context';
 
@@ -12,7 +11,7 @@ import WheelsSelector from '../components/WheelsSelector/WheelsSelector';
 import Summary from '../components/Summary/Summary';
 
 export const Order = () => {
-    const [CONTEXT, setCONTEXT] = useContext(Context);
+    const [CONTEXT] = useContext(Context);
 
     const CurrentStage = () => {
         if (CONTEXT.current_stage === 1) {

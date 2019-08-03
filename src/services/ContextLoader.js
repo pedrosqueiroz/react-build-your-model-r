@@ -2,11 +2,12 @@ import { useContext } from 'react';
 
 import { api } from '../services/API';
 import { Context } from './Context';
+
 //funcao principal de carregamento de dados (api fetch) e carregamento do model r default.
 export async function ContextLoader() {
     const [CONTEXT, setCONTEXT] = useContext(Context);
 
-    console.log('Context is now loading...');
+    console.log('API fetch & load iniciado...');
 
     const promiseFetchData = new Promise(
         function (resolve, reject) {
@@ -37,8 +38,7 @@ export async function ContextLoader() {
                                         }
                                     }
                                 }));
-                            })
-                        console.log(CONTEXT)
+                            })                        
                     }, 1000)
                 )
             } else {
@@ -46,7 +46,6 @@ export async function ContextLoader() {
                     console.log('Error on promise_fetchData!')
                 )
             }
-
         }
     );
 

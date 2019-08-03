@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { Context } from '../../services/Context';
-
+import toUSD from '../../services/Utils';
 import './WheelsSelector.scss';
 
 import wheel1 from '../../assets/img/png/wheel1.png';
@@ -42,8 +42,6 @@ export const Wheel = (props) => {
                 wheels_price: price
             }
         }));
-
-        console.log(CONTEXT);
     }
 
     return (
@@ -53,9 +51,9 @@ export const Wheel = (props) => {
             data-wheel_label={label}
             data-wheel_price={price}
         >
-            <img src={selectedWheel()} alt="" />
+            <img src={selectedWheel()} className="--isClickable" alt="" />
             <p className={CONTEXT.modelr.wheels_id === id ? 'wheel--title --selected' : 'wheel--title'}>{label}</p>
-            <p className={CONTEXT.modelr.wheels_id === id ? 'wheel--title --red --selected' : 'wheel--title --red'}>{price > 0 ? `+$${price}` : 'Included'}</p>
+            <p className={CONTEXT.modelr.wheels_id === id ? 'wheel--title --red --selected' : 'wheel--title --red'}>{price > 0 ? `+$${toUSD(price)}` : 'Included'}</p>
         </div>
 
     );

@@ -6,7 +6,7 @@ import { Wheel } from './Wheel';
 import './WheelsSelector';
 
 export default function WheelsSelector() {
-  const [CONTEXT, setCONTEXT] = useContext(Context);
+  const [CONTEXT] = useContext(Context);
   const { isLoading } = CONTEXT;
   const wheelList = CONTEXT.api_fetch_result.wheels.items;
   return (

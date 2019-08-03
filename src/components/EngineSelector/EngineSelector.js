@@ -11,7 +11,7 @@ import engine2 from '../../assets/img/png/engine2.png';
 
 
 export const EngineSelector = (props) => {
-    const [CONTEXT, setCONTEXT] = useContext(Context);
+    const [CONTEXT] = useContext(Context);
 
     const { isLoading } = CONTEXT;
     const engineList = CONTEXT.api_fetch_result.engine.items;

@@ -17,6 +17,7 @@
   padding: 10px 25px;
 }
 .header__menu__item {
+  position: relative;
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.89px;
@@ -29,6 +30,6 @@
     opacity: 1;
   }
   &:hover {
-    border-bottom: solid 2px #444;
+    border-bottom: solid 2px $rvRed;
   }
 }

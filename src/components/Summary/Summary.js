@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { Context } from '../../services/Context';
-
+import toUSD from '../../services/Utils';
 import './Summary.scss'
 
 import finalRed from '../../assets/img/png/final-red.png';
@@ -10,8 +10,8 @@ import finalGray from '../../assets/img/png/final-gray.png';
 
 
 export default function Summary() {
-    const [CONTEXT, setCONTEXT] = useContext(Context);
-    var finalCarPrice = (CONTEXT.modelr.price + CONTEXT.modelr.engine_price + CONTEXT.modelr.color_price + CONTEXT.modelr.wheels_price)
+    const [CONTEXT] = useContext(Context);
+    var finalCarPrice = toUSD(CONTEXT.modelr.price + CONTEXT.modelr.engine_price + CONTEXT.modelr.color_price + CONTEXT.modelr.wheels_price)
 
     const finalCarImage = () => {
         if (CONTEXT.modelr.color_id === 4) {
@@ -32,7 +32,7 @@ export default function Summary() {
                 <div className="Summary">
                     <h1 className="summaryTitle">Your Model R</h1>
                     <span className="listItem">
-                        <p>Starting price</p><p className="itemPrice">${CONTEXT.modelr.price}</p>
+                        <p>Starting price</p><p className="itemPrice">${toUSD(CONTEXT.modelr.price)}</p>
                     </span>
                     <hr className="lightHr" />
                     <span className="listItem">
@@ -43,13 +43,13 @@ export default function Summary() {
                             {` - `}
                             {CONTEXT.modelr.engine_range} miles range
                         </p>
-                        <p className="itemPrice">{CONTEXT.modelr.engine_price > 0 ? `+$${CONTEXT.modelr.engine_price}` : 'Included'}</p>
+                        <p className="itemPrice">{CONTEXT.modelr.engine_price > 0 ? `+$${toUSD(CONTEXT.modelr.engine_price)}` : 'Included'}</p>
                     </span>
                     <span className="listItem">
-                        <p>{CONTEXT.modelr.color_label} Paint</p><p className="itemPrice">{CONTEXT.modelr.color_price > 0 ? `+$${CONTEXT.modelr.color_price}` : 'Included'}</p>
+                        <p>{CONTEXT.modelr.color_label} Paint</p><p className="itemPrice">{CONTEXT.modelr.color_price > 0 ? `+$${toUSD(CONTEXT.modelr.color_price)}` : 'Included'}</p>
                     </span>
                     <span className="listItem">
-                        <p>{CONTEXT.modelr.wheels_label}</p><p className="itemPrice">{CONTEXT.modelr.wheels_price > 0 ? `+$${CONTEXT.modelr.wheels_price}` : 'Included'}</p>
+                        <p>{CONTEXT.modelr.wheels_label}</p><p className="itemPrice">{CONTEXT.modelr.wheels_price > 0 ? `+$${toUSD(CONTEXT.modelr.wheels_price)}` : 'Included'}</p>
                     </span>
                     <hr className="lightHr" />
                     <span className="listItem --lg">

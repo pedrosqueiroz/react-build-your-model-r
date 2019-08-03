@@ -44,6 +44,10 @@
   align-items: center;
   padding: 5px 10px;
   min-width: 30%;
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  &.--isClickable:hover {
+    transform: translateY(4px);
+  }
 
   &.--currentPrice {
     padding: 0;
@@ -79,11 +83,19 @@
     font-size: 1.375em;
     text-transform: lowercase;
     align-items: center;
-    width: 70px;
+    min-width: 75px;
     div {
       width: 100%;
       display: flex;
       justify-content: space-around;
+      img {
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      &:hover {
+        img {
+          margin-left: 10px;
+        }
+      }
     }
   }
 }

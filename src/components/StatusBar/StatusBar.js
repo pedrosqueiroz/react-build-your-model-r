@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { Context } from '../../services/Context';
-
+import toUSD from '../../services/Utils';
 import './StatusBar.scss';
 
 import rightArrow from '../../assets/img/svg/right-arrow.svg';
@@ -67,22 +67,22 @@ export const StatusBar = () => {
     <div className="statusBar">
       <div className="statusBar__priceSlice">
         <span className="statusBar__item --currentPrice">
-          ${(CONTEXT.modelr.price + CONTEXT.modelr.engine_price + CONTEXT.modelr.color_price + CONTEXT.modelr.wheels_price).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}
+          ${toUSD(CONTEXT.modelr.price + CONTEXT.modelr.engine_price + CONTEXT.modelr.color_price + CONTEXT.modelr.wheels_price)}
         </span>
         <span className="statusBar__item --modelLabel">
           Model R
       </span>
       </div>
       <span className="statusBar__partsSlice">
-        <span className="statusBar__item --selectedEngine" onClick={setStageEngine}>
+        <span className="statusBar__item --selectedEngine --isClickable" onClick={setStageEngine}>
           {CONTEXT.modelr.engine_kwh}<span className="--red">{CONTEXT.modelr.engine_type}</span>
         </span>
 
-        <span className="statusBar__item --selectedColor" onClick={setStageColor}>
+        <span className="statusBar__item --selectedColor --isClickable" onClick={setStageColor}>
           {CONTEXT.last_stage > 1 ? <img src={selectedColor()} alt="Color selection." /> : null}
         </span>
 
-        <span className="statusBar__item --selectedWheel" onClick={setStageWheels}>
+        <span className="statusBar__item --selectedWheel --isClickable" onClick={setStageWheels}>
           {CONTEXT.last_stage > 2 ? <img src={selectedWheels()} alt="Wheels selection." /> : null}
         </span>
       </span>

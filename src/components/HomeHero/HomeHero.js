@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-
-import { ContextLoader } from '../../services/ContextLoader';
 import './HomeHero.scss';
 
 import hero_modelr from '../../assets/img/png/hero_modelr.png';

@@ -1,5 +1,4 @@
-import React, { usecontext } from 'react';
-import Loader from '../components/Loader/Loader';
+import React from 'react';
 import Header from '../components/Header/Header';
 import HomeHero from '../components/HomeHero/HomeHero';
 import HomeFooter from '../components/HomeFooter/HomeFooter';
