@@ -10,20 +10,21 @@ import gray from '../../assets/img/png/gray.png';
 
 export default function ColorSelector() {
 
-  const [MODELR, setMODELR] = useContext(Context);
+  const [CONTEXT, setCONTEXT] = useContext(Context);
 
   const selectedColor = () => {
-    if (MODELR.color_id === 4) {
+    if (CONTEXT.modelr.color_id === 4) {
       return red;
-    } else if (MODELR.color_id === 5) {
+    } else if (CONTEXT.modelr.color_id === 5) {
       return blue;
-    } else if (MODELR.color_id === 6) {
+    } else if (CONTEXT.modelr.color_id === 6) {
       return gray;
     } else return console.log('Error loading selected wheels.');
 
   }
 
-  const { isLoading, colorList } = MODELR;
+  const { isLoading } = CONTEXT;
+  const colorList = CONTEXT.api_fetch_result.color.items;
   return (
     <div className="Stage">
       <div className="Stage__half">
@@ -33,8 +34,8 @@ export default function ColorSelector() {
             className="--imagePreview" alt=""
           />
           <div className="--paintSpecs">
-            <h1>{MODELR.color_label === null ? 'Metalic Vermilion' : MODELR.color_label}</h1>
-            <h1 className="--red">{MODELR.color_price > 0 ? `$${MODELR.color_price}` : 'Included'} </h1>
+            <h1>{CONTEXT.modelr.color_label === null ? 'Metalic Vermilion' : CONTEXT.modelr.color_label}</h1>
+            <h1 className="--red">{CONTEXT.modelr.color_price > 0 ? `$${CONTEXT.modelr.color_price}` : 'Included'} </h1>
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@ export default function ColorSelector() {
             <div className="stage-area-title">
               <div className="--stageSet--title">
                 <h1>Color</h1>
-                <p>{MODELR.color_description}</p>
+                <p>{CONTEXT.api_fetch_result.color.description}</p>
               </div>
             </div>
             <div className="stage-area-body">

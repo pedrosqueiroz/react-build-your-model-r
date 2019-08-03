@@ -9,8 +9,8 @@ import wheel2 from '../../assets/img/png/wheel2.png';
 import wheel3 from '../../assets/img/png/wheel3.png';
 
 export const Wheel = (props) => {
-    const { id, hex, label, price } = props.wheel;
-    const [MODELR, setMODELR] = useContext(Context);
+    const { id, label, price } = props.wheel;
+    const [CONTEXT, setCONTEXT] = useContext(Context);
 
     const selectedWheel = wheelChoice => {
         var wheels_id = id;
@@ -26,28 +26,36 @@ export const Wheel = (props) => {
 
     const setWheelChoice = WheelChoice => {
         var id = parseInt(WheelChoice.currentTarget.dataset.wheel_id);
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, wheels_id: id
+        setCONTEXT(currentCONTEXT => ({
+            ...currentCONTEXT, modelr: {
+                price: currentCONTEXT.modelr.price,
+                engine_id: currentCONTEXT.modelr.engine_id,
+                engine_type: currentCONTEXT.modelr.engine_type,
+                engine_kwh: currentCONTEXT.modelr.engine_kwh,
+                engine_range: currentCONTEXT.modelr.engine_range,
+                engine_price: currentCONTEXT.modelr.engine_price,
+                color_id: currentCONTEXT.modelr.color_id,
+                color_label: currentCONTEXT.modelr.color_label,
+                color_price: currentCONTEXT.modelr.color_price,
+                wheels_id: id,
+                wheels_label: label,
+                wheels_price: price
+            }
         }));
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, wheels_price: price
-        }));
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, wheels_label: label
-        }));
-        console.log(MODELR);
+
+        console.log(CONTEXT);
     }
 
     return (
-        <div className={MODELR.wheels_id === id ? 'wheel --selected' : 'wheel'}
+        <div className={CONTEXT.modelr.wheels_id === id ? 'wheel --selected' : 'wheel'}
             onClick={setWheelChoice}
             data-wheel_id={id}
             data-wheel_label={label}
             data-wheel_price={price}
         >
             <img src={selectedWheel()} alt="" />
-            <p className={MODELR.wheels_id === id ? 'wheel--title --selected' : 'wheel--title'}>{label}</p>
-            <p className={MODELR.wheels_id === id ? 'wheel--title --red --selected' : 'wheel--title --red'}>{price > 0 ? `+$${price}` : 'Included'}</p>
+            <p className={CONTEXT.modelr.wheels_id === id ? 'wheel--title --selected' : 'wheel--title'}>{label}</p>
+            <p className={CONTEXT.modelr.wheels_id === id ? 'wheel--title --red --selected' : 'wheel--title --red'}>{price > 0 ? `+$${price}` : 'Included'}</p>
         </div>
 
     );

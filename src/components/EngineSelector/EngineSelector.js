@@ -1,26 +1,26 @@
 import React, { useContext } from 'react';
 
-import '../assets/scss/EngineStage.scss';
+import './EngineSelector.scss';
 
 import { Engine  } from './Engine';
-import { Context } from '../services/Context';
+import { Context } from '../../services/Context';
 
-import engine1 from '../assets/img/png/engine1.png';
-import engine2 from '../assets/img/png/engine2.png';
+import engine1 from '../../assets/img/png/engine1.png';
+import engine2 from '../../assets/img/png/engine2.png';
 
 
 
 export const EngineSelector = (props) => {
-    const [MODELR, setMODELR] = useContext(Context);
+    const [CONTEXT, setCONTEXT] = useContext(Context);
 
-    const { isLoading, engineList } = MODELR;
-
+    const { isLoading } = CONTEXT;
+    const engineList = CONTEXT.api_fetch_result.engine.items;
     return (
         <div className="Stage">
             <div className="Stage__half">
                 <div className="Stage__half --stagePreview">
                     <img
-                        src={MODELR.engine_id >= 2 ? engine2 : engine1}
+                        src={CONTEXT.modelr.engine_id >= 2 ? engine2 : engine1}
                         className="--imagePreview" alt=""
                     />
                 </div>

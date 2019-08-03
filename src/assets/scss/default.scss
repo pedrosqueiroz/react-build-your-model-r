@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600&display=swap');
-@import './assets/scss/variables';
-.global {
+@import './variables';
+.default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,8 +8,8 @@
   font-family: "Saira Condensed", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-a {
-  text-decoration: none;
-  color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }

@@ -1,39 +1,25 @@
 import React, { useState, createContext } from 'react';
+import { ContextLoader } from './ContextLoader';
 
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
 
 
-    const [MODELR, setMODELR] = useState(
+    const [CONTEXT, setCONTEXT] = useState(
         {
+            modelr: {
+                engine_id: 1
+            },
+            api_fetch_result: {},
             isLoading: true,
-            currentStage: 0,
-            lastStage: 0,
-            price: 0,
-            engine_id: 0,
-            engine_kwh: null,
-            engine_type: null,
-            engine_price: 0,
-            color_id: 0,
-            color_price: 0,
-            color_label: null,
-            color_description: null,
-            wheels_id: 0,
-            wheels_label: null,
-            wheels_price: 0,
-            engineList: [],
-            colorList: [],
-            wheelList: [],
-            fetchResult: []
-        }
+            current_stage: 0,
+            last_stage: 0,
+           }
     );
 
-
-
-
     return (
-        <Context.Provider value={[MODELR, setMODELR]}>
+        <Context.Provider value={[CONTEXT, setCONTEXT]}>
             {children}
         </Context.Provider>
     );

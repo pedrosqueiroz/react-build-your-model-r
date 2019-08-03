@@ -6,8 +6,9 @@ import { Wheel } from './Wheel';
 import './WheelsSelector';
 
 export default function WheelsSelector() {
-  const [MODELR, setMODELR] = useContext(Context);
-  const { isLoading, wheelList } = MODELR;
+  const [CONTEXT, setCONTEXT] = useContext(Context);
+  const { isLoading } = CONTEXT;
+  const wheelList = CONTEXT.api_fetch_result.wheels.items;
   return (
     <div className="Stage --WheelSelection">
       {

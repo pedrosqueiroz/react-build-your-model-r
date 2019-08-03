@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import HomeFooter from '../HomeFooter/HomeFooter';
+
+import { ContextLoader } from '../../services/ContextLoader';
 import './HomeHero.scss';
 
 import hero_modelr from '../../assets/img/png/hero_modelr.png';
 import right_arrow from '../../assets/img/svg/right-arrow.svg';
 
 export default function HomeHero() {
+    //Inicia o Context Loader, onde o fetch da API é feito
+    //e os dados carregados no Context.
     return (
         <div className="container__hero">
             <div className="hero">
@@ -21,9 +24,9 @@ export default function HomeHero() {
 
             </div>
             <Link to="/order">
-                <span className="hero_begin underline">
-                    BEGIN<img src={right_arrow} alt="Order now." />
-                </span>
+            <span className="hero_begin underline">
+                BEGIN<img src={right_arrow} alt="Order now."/>
+            </span>
             </Link>
         </div>
     );

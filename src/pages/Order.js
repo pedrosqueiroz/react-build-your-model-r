@@ -1,32 +1,35 @@
 import React, { useContext } from 'react';
 
 import { ContextLoader } from '../services/ContextLoader';
-
+import Loader from '../components/Loader/Loader';
 import { Context } from '../services/Context';
-import { StatusBar } from '../components/StatusBar';
-import { EngineSelector } from '../components/EngineSelector';
+
+import Header from '../components/Header/Header';
+import { StatusBar } from '../components/StatusBar/StatusBar';
+import { EngineSelector } from '../components/EngineSelector/EngineSelector';
 import ColorSelector from '../components/ColorSelector/ColorSelector';
 import WheelsSelector from '../components/WheelsSelector/WheelsSelector';
 import Summary from '../components/Summary/Summary';
 
 export const Order = () => {
-    ContextLoader();
-    const [MODELR, setMODELR] = useContext(Context);
+    const [CONTEXT, setCONTEXT] = useContext(Context);
 
     const CurrentStage = () => {
-        if (MODELR.currentStage === 1) {
+        if (CONTEXT.current_stage === 1) {
             return <EngineSelector />
-        } else if (MODELR.currentStage === 2) {
+        } else if (CONTEXT.current_stage === 2) {
             return <ColorSelector />
-        } else if (MODELR.currentStage === 3) {
+        } else if (CONTEXT.current_stage === 3) {
             return <WheelsSelector />
-        } else if (MODELR.currentStage === 4) {
+        } else if (CONTEXT.current_stage === 4) {
             return <Summary />
         } else return (<div><h1>Reload the page or click in one of the car parts below :(</h1></div>)
 
     }
     return (
         <React.Fragment>
+            {CONTEXT.isLoading === true ? <Loader/> : null}
+            <Header/>
             {CurrentStage()}
             <StatusBar />
         </React.Fragment>

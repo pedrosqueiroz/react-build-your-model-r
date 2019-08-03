@@ -8,11 +8,9 @@ import redDot from '../../assets/img/png/red-dot.png';
 import blueDot from '../../assets/img/png/blue-dot.png';
 import grayDot from '../../assets/img/png/gray-dot.png';
 
-const COLORS = [];
-
 const Color = (props) => {
     const { id, hex, label, price } = props.color;
-    const [MODELR, setMODELR] = useContext(Context);
+    const [CONTEXT, setCONTEXT] = useContext(Context);
 
     const selectedColorDot = colorChoice => {
         var color_id = id;
@@ -27,16 +25,23 @@ const Color = (props) => {
     }
     const setColorChoice = colorChoice => {
         var id = parseInt(colorChoice.currentTarget.dataset.color_id);
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, color_id: id
+        setCONTEXT(currentCONTEXT => ({
+            ...currentCONTEXT, modelr: {  
+                price: currentCONTEXT.modelr.price,             
+                color_id: id,
+                color_label: label,
+                color_price: price,
+                wheels_id: currentCONTEXT.modelr.wheels_id,
+                wheels_label: currentCONTEXT.modelr.wheels_label,
+                wheels_price: currentCONTEXT.modelr.wheels_price,
+                engine_id: currentCONTEXT.modelr.engine_id,
+                engine_type: currentCONTEXT.modelr.engine_type,
+                engine_kwh: currentCONTEXT.modelr.engine_kwh,
+                engine_range: currentCONTEXT.modelr.engine_range,
+                engine_price: currentCONTEXT.modelr.engine_price
+            }
         }));
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, color_price: price
-        }));
-        setMODELR(currentMODELR => ({
-            ...currentMODELR, color_label: label
-        }));
-        console.log(MODELR);
+        console.log(CONTEXT);
     }
 
     return (
@@ -47,11 +52,11 @@ const Color = (props) => {
             data-color_label={label}
             data-color_hex={hex}
         >
-            <div className={MODELR.color_id === id ? 'ColorIsSelected --selected' : 'ColorIsSelected'}>
+            <div className={CONTEXT.modelr.color_id === id ? 'ColorIsSelected --selected' : 'ColorIsSelected'}>
                 <img src={selectedColorDot()} alt="" />
             </div>
         </div>
     )
 
 }
-export { Color, COLORS };
+export { Color };
